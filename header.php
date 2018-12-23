@@ -110,9 +110,6 @@ global $current_user;
 						<a href="/members/" <?php echo is_page('members') ? 'class="current"' : '' ?>>Member News</a>
 					</li>
 					<li>
-						<a href="/my-account/add-members/" <?php echo in_array($post->post_name, $bookingPageSlugs) ? 'class="current"' : '' ?>>Book Online</a>
-					</li>
-					<li>
 						<a href="/booking-info/" <?php echo is_page('booking-info') ? 'class="current"' : '' ?>>Booking Info</a>
 					</li>
 					<li>
@@ -140,9 +137,6 @@ global $current_user;
 					<a href="/members/" <?php echo is_page('members') ? 'class="current"' : '' ?>>Member News</a>
 				</li>
 				<li>
-					<a href="/my-account/add-members/" <?php echo in_array($post->post_name, $bookingPageSlugs) ? 'class="current"' : '' ?>>Book Online</a>
-				</li>
-				<li>
 					<a href="/booking-info/" <?php echo is_page('booking-info') ? 'class="current"' : '' ?>>Bookings Info</a>
 				</li>
 				<li>
@@ -154,61 +148,4 @@ global $current_user;
 			</ul>
 		</div>
 		
-		<?php if( is_user_logged_in() ){ ?>
-		<div class="user-account">
-			<div class="header-left">
-				<?php
-					$ski_locker = get_field( "ski_locker_main", 'user_'.get_current_user_id() );
-					$locker     = get_field( "locker_main", 'user_'.get_current_user_id() );
-					$door_code  = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'door-code' AND post_status = 'publish' ORDER BY post_date_gmt DESC LIMIT 0,1");
-					$door_code  = ( isset($door_code[0]) ) ? $door_code[0]->post_title.' - '.get_field_object('door_code', $door_code[0]->ID)['value'] : '';
-					//(new tac_functions)->echoPre($ski_locker);
-				?>
-				<div class="nav">
-					<li>
-						<a href="#">Lockers #</a>
-						<ul>
-							<?php if( !empty($ski_locker) || ( isset($ski_locker[0]['ski_locker']) && !empty($ski_locker[0]['ski_locker']) ) ){ ?>
-								<?php foreach ($ski_locker as $sk => $sv) {
-									echo '<li>';
-									if( $sk == 0 ) echo '<span><strong>Ski Lockers</strong></span>';
-									echo '<a>'.$sv['ski_locker'].'</a>';
-									echo '</li>';
-								}?>
-							<?php }else{
-								echo '<span><strong>No Ski Lockers</strong></span><br />';
-							}?>
 
-							<?php if( !empty($locker) ){ ?>
-								<?php foreach ($locker as $lk => $lv) {
-									echo '<li>';
-									if( $lk == 0 ) echo '<span><strong>Lockers</strong></span>';
-									echo '<a>'.$lv['locker'].'</a>';
-									echo '</li>';
-								}?>
-							<?php }else{
-									echo '<span><strong>No Lockers</strong></span>';
-							}?>
-						</ul>
-					</li>
-				</div>
-				<div class="nav">
-					<li>
-						<a><?php echo $door_code; ?></a>
-					</li>
-				</div>
-			</div>
-			<div class="header-right">
-				<a href="<?php echo get_home_url().'/my-account/'; ?>">My Account</a>
-				<a href="<?php echo get_home_url().'/my-account/add-members/'; ?>">Make a Booking</a>
-				<a href="<?php echo wp_logout_url( get_home_url().'/my-account/' ); ?>">Logout</a>
-				<!-- 
-				<?php global $woocommerce; $cart = ( $woocommerce->cart->get_cart_total() ) ? $woocommerce->cart->get_cart() : array(); ?>
-				<?php if( !empty($cart) ){ ?>
-						<a href="<?php echo get_home_url(); ?>/cart/">View Cart - <?php echo sizeof($woocommerce->cart->get_cart()).' booking'; ?></a>
-				<?php } ?>
-				 -->
-			</div>
-		</div>
-		<div class="clearfix bg-light-grey"></div>
-		<?php } ?>
