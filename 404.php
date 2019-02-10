@@ -18,7 +18,7 @@ get_header(); ?>
 			</header>
 
 			<div class="page-content">
-				<p>If you are looking for private member's pages, please <a href="/">login</a>.</p>
+				<p>If you are looking for private member's pages, please <a href="/">return to the home page</a> and use the login form on the left.</p>
 
 			</div><!-- .page-content -->
 
