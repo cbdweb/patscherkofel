@@ -18,7 +18,7 @@ get_header(); ?>
 			</header>
 
 			<div class="page-content">
-				<p><?php _e( 'It looks like nothing was found at this location.', 'twentyfourteen' ); ?></p>
+				<p>If you are looking for private member's pages, please <a href="/">login</a>.</p>
 
 			</div><!-- .page-content -->
 
