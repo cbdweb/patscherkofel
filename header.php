@@ -99,7 +99,7 @@ global $current_user;
 						'room-21',
 					);
 				?>
-				<ul>
+                <ul>
 					<li>
 						<a href="/" <?php echo is_home() || is_front_page() ? 'class="current"' : '' ?>>Home</a>
 					</li>

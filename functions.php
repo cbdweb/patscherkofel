@@ -205,12 +205,6 @@ function remove_filters_for_anonymous_class( $hook_name = '', $class_name ='', $
 
 
 
-
-
-
-
-
-
 function debenture_number_transfer_page_register() {
 	add_submenu_page(
 		null,
