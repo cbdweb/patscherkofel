@@ -112,10 +112,7 @@ global $current_user;
 					<li>
 						<a href="/booking-info/" <?php echo is_page('booking-info') ? 'class="current"' : '' ?>>Booking Info</a>
 					</li>
-					<li>
-						<a href="/membership/" <?php echo is_page('membership') ? 'class="current"' : '' ?>>Membership</a>
-					</li>
-					<li>
+                    <li>
 						<a href="/contact-us/" <?php echo is_page('contact-us') ? 'class="current"' : '' ?>>Contact</a>
 					</li>
 				</ul>
