@@ -12,13 +12,13 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-            <?php get_sidebar('home'); ?>
+            <?php get_sidebar('404'); ?>
 			<header class="page-header">
-				<h1 class="page-title"><?php _e( '404 Not Found', 'twentyfourteen' ); ?></h1>
+				<h1 class="page-title"><?php _e( 'Oops! That page can\'t be found.', 'psl' ); ?></h1>
 			</header>
 
 			<div class="page-content">
-				<p>If you are looking for private member's pages, please <a href="/">return to the home page</a> and use the login form on the left.</p>
+                <p>Try the search on the left, or <b>login to view member pages.</b></p>
 
 			</div><!-- .page-content -->
 
