@@ -110,7 +110,7 @@ global $current_user;
 						<a href="/members/" <?php echo is_page('members') ? 'class="current"' : '' ?>>Member News</a>
 					</li>
 					<li>
-						<a href="/booking-info/" <?php echo is_page('booking-info') ? 'class="current"' : '' ?>>Booking Info</a>
+						<a href="/booking-info/" <?php echo is_page('booking-info') ? 'class="current"' : '' ?>>Bookings</a>
 					</li>
                     <li>
 						<a href="/contact-us/" <?php echo is_page('contact-us') ? 'class="current"' : '' ?>>Contact</a>
