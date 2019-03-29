@@ -27,7 +27,7 @@ get_header(); ?>
 			</header>
 
 			<div class="page-content">
-                <p>Try the search on the left, or <b>login to view member pages.</b></p>
+                <p>Try the search on the left<?= is_user_logged_in() ? ", or <b>login to view member pages" : ""?>.</b></p>
 
 			</div><!-- .page-content -->
 
