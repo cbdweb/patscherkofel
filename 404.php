@@ -14,7 +14,16 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
             <?php get_sidebar('404'); ?>
 			<header class="page-header">
-				<h1 class="page-title"><?php _e( 'Either the page does not exist, or it requires member login to view', 'psl' ); ?></h1>
+                <?php
+                if( is_user_logged_in() ){
+                    ?>
+                    <h1 class="page-title"><?php _e( 'Oops! That page can\'t be found.', 'psl' ); ?></h1>
+                    <?php
+                } else {
+                    ?>
+                    <h1 class="page-title"><?php _e( 'Some pages require member login to view', 'psl' ); ?></h1>
+                    <?php
+                }?>
 			</header>
 
 			<div class="page-content">
